@@ -56,7 +56,7 @@ cp ./out/* ~/.vim/tools/
 
 Then adjust your `$PATH` by adding `~/.vim/tools` to it.
 
-## Copy from vim running in tmux to system clipboard
+## Copy from vim running in tmux to your local system's clipboard
 
 More often than not I'm working with vim on a remote server, in a tmux session. And sometimes I need to copy a block of text from vim to a desktop application running on my local machine (for example, to a browser). Easier said than done with vanilla vim!
 
