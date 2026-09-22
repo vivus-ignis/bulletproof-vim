@@ -1,4 +1,4 @@
-# bulletproof-vim
+# Bulletproof Vim
 
 ## What is it?
 
@@ -75,7 +75,7 @@ These are custom hotkeys I've added in my `.vimrc`:
 
 | Hotkey | What for |
 |--------|----------|
-| <Tab>  | Switch to another vim window (shortcut for `Ctrl-w + w` |
+| Tab    | Switch to another vim window (shortcut for `Ctrl-w + w` |
 | ,q     | Close buffer (won't do if a buffer is modified) |
 | ,.     | Switch to previously opened buffer |
 | mm     | Set/unset a line bookmark |
