@@ -80,8 +80,6 @@ autocmd BufEnter * DirenvExport
 " C-n completion
 let g:ale_completion_enabled = 1
 
-" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
 
 """ --- look & feel ---
@@ -217,7 +215,7 @@ let g:bookmark_highlight_lines = 1     " highlight bookmarked line
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" command to toggle fixers off
+" command to toggle fixers on & off
 command! ALEToggleFixer execute "let g:ale_fix_on_save = get(g:, 'ale_fix_on_save', 0) ? 0 : 1"
 nnoremap <leader>fx :ALEToggleFixer<cr>
 
@@ -230,7 +228,7 @@ augroup FiletypeGroup
   au BufNewFile,BufRead *.tftpl set filetype=json
 augroup END
 
-" ALE formatters
+" setting linters is optional
 " let g:ale_linters = {
 "     \ 'json': ['biome'],
 "     \ 'make': ['checkmake'],

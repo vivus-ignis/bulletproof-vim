@@ -1,2 +1,2 @@
 build:
-	docker build --output type=local,dest=./vimtools .
+	docker build --output type=local,dest=./out .
