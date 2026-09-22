@@ -73,20 +73,22 @@ Restart tmux, run vim, select the portion you want to copy and press `,c`, Now t
 
 These are custom hotkeys I've added in my `.vimrc`:
 
-| <Tab> | Switch to another vim window (shortcut for `Ctrl-w + w` |
-| ,q | Close buffer (won't do if a buffer is modified) |
-| ,. | Switch to previously opened buffer |
-| mm | Set/unset a line bookmark |
-| mn | Jump to next line bookmark |
-| mp | Jump to previous line bookmark |
-| ,ma | Show all line bookmarks |
+| Hotkey | What for |
+|--------|----------|
+| <Tab>  | Switch to another vim window (shortcut for `Ctrl-w + w` |
+| ,q     | Close buffer (won't do if a buffer is modified) |
+| ,.     | Switch to previously opened buffer |
+| mm     | Set/unset a line bookmark |
+| mn     | Jump to next line bookmark |
+| mp     | Jump to previous line bookmark |
+| ,ma    | Show all line bookmarks |
 | Ctrl-k | Jump to next ALE warning |
 | Ctrl-j | Jump to previous ALE warning |
-| ,fx | Enable ALE fixers |
+| ,fx    | Enable ALE fixers |
 | Ctrl-/ | Open file manager |
-| ,ss | Teleport to a buffer location by 2 characters |
-| ,ff | Find file by name |
-| ,fd | Find directory by name |
-| ,fg | Find (grep) *in* files |
-| ,fb | List of buffers |
-| ,fp | Reveal previous search results |
+| ,ss    | Teleport to a buffer location by 2 characters |
+| ,ff    | Find file by name |
+| ,fd    | Find directory by name |
+| ,fg    | Find (grep) *in* files |
+| ,fb    | List of buffers |
+| ,fp    | Reveal previous search results |
