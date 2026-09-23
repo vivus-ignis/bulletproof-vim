@@ -56,6 +56,14 @@ cp ./out/* ~/.vim/tools/
 
 Then adjust your `$PATH` by adding `~/.vim/tools` to it.
 
+### WHat about vimtools for python?
+
+Python linters/fixers/LSPs should be installed using a package & virtualenv manager like poetry, so do something like
+
+```bash
+poetry add --dev ruff pyright
+```
+
 ## Copy from vim running in tmux to your local system's clipboard
 
 More often than not I'm working with vim on a remote server, in a tmux session. And sometimes I need to copy a block of text from vim to a desktop application running on my local machine (for example, to a browser). Easier said than done with vanilla vim!
