@@ -148,8 +148,17 @@ let g:rainbow_conf = {
 \	'guifgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
 \ }
 
+" If a path to file is longer than this, it will be shortened in the status bar
+let g:lightline_path_max_length = 60
+
 function! LightlineCurrentDirectory() abort
-  return expand('%:p:h')
+  let l:path = expand('%:p:h')
+  
+  if len(l:path) > g:lightline_path_max_length
+    return pathshorten(l:path, 4)
+  endif
+  
+  return l:path
 endfunction
 
 function! ALEFixStatus()
