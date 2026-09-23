@@ -77,7 +77,7 @@ autocmd BufEnter * if filereadable(expand('%:p:h') .. '/.envrc') | silent! lcd %
 " read direnv when switching to a buffer
 autocmd BufEnter * DirenvExport
 
-" C-n completion
+" C-x C-o completion
 let g:ale_completion_enabled = 1
 
 call plug#begin('~/.vim/plugged')
@@ -200,6 +200,18 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 colorscheme nord
 
+" set syntax to sh for files with no extension
+au BufNewFile,BufRead * if &syntax == '' | set syntax=sh | endif
+
+" tftpl is terraform
+augroup FiletypeGroup
+  autocmd!
+  au BufNewFile,BufRead *.tftpl set filetype=json
+augroup END
+
+" set syntax to sh for files with no extension
+au BufNewFile,BufRead * if &syntax == '' | set syntax=sh | endif
+
 " buffers
 "set hidden
 set showtabline=0                      " do not show the line with tabs/buffers on top of the screen
@@ -224,28 +236,22 @@ let g:bookmark_highlight_lines = 1     " highlight bookmarked line
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" command to toggle fixers on & off
+" Go to definition for ALE
+nmap <leader>df :ALEGoToDefinition<cr>
+
+" command to toggle fixers off
 command! ALEToggleFixer execute "let g:ale_fix_on_save = get(g:, 'ale_fix_on_save', 0) ? 0 : 1"
 nnoremap <leader>fx :ALEToggleFixer<cr>
 
-" set syntax to sh for files with no extension
-au BufNewFile,BufRead * if &syntax == '' | set syntax=sh | endif
-
-" tftpl is terraform
-augroup FiletypeGroup
-  autocmd!
-  au BufNewFile,BufRead *.tftpl set filetype=json
-augroup END
-
-" setting linters is optional
-" let g:ale_linters = {
-"     \ 'json': ['biome'],
-"     \ 'make': ['checkmake'],
-"     \ 'python': ['flake8', 'pylint', 'ruff'],
-"     \ 'terraform': ['tflint', 'checkov'],
-"     \ 'sh': ['shellcheck'],
-"     \ 'yaml': ['yamllint'],
-"     \ }
+" ALE formatters
+let g:ale_linters = {
+     \ 'json': ['biome'],
+     \ 'make': ['checkmake'],
+     \ 'python': ['flake8', 'pylint', 'ruff', 'pyright'],
+     \ 'terraform': ['tflint', 'checkov'],
+     \ 'sh': ['shellcheck'],
+     \ 'yaml': ['yamllint'],
+     \ }
 let g:ale_fixers = {
       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'json': ['biome'],
@@ -259,6 +265,8 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 0
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_changed = 'never'
+
+let g:ale_python_pyright_auto_poetry = 1
 
 let g:ale_python_auto_poetry = 1
 let g:ale_python_auto_uv = 1
