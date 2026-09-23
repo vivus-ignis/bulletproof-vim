@@ -100,3 +100,4 @@ These are custom hotkeys I've added in my `.vimrc`:
 | `,fg`   | Find (grep) *in* files |
 | `,fb`   | List of buffers |
 | `,fp`   | Reveal previous search results |
+| `,df`   | Go to definition |
