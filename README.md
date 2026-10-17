@@ -24,7 +24,7 @@ The guiding principles are:
 - install [vim plugin manager](https://github.com/junegunn/vim-plug)
 
 ```bash
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs ihttps://raw.githubusercontent.com/junegunn/vim-plug/e216852799c98de7f47309cc0a2ac6e294d0999c/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/e216852799c98de7f47309cc0a2ac6e294d0999c/plug.vim
 ```
 
 - install vim plugins: start vim and type `:PlugInstall`
@@ -56,7 +56,7 @@ cp ./out/* ~/.vim/tools/
 
 Then adjust your `$PATH` by adding `~/.vim/tools` to it.
 
-### WHat about vimtools for python?
+### What about vimtools for python?
 
 Python linters/fixers/LSPs should be installed using a package & virtualenv manager like poetry, so do something like
 
