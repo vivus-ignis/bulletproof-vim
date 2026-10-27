@@ -209,9 +209,6 @@ augroup FiletypeGroup
   au BufNewFile,BufRead *.tftpl set filetype=json
 augroup END
 
-" set syntax to sh for files with no extension
-au BufNewFile,BufRead * if &syntax == '' | set syntax=sh | endif
-
 " buffers
 "set hidden
 set showtabline=0                      " do not show the line with tabs/buffers on top of the screen
